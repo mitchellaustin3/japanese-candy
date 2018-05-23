@@ -11,5 +11,7 @@ Have the GCloud SDK installed, have editor/owner permissions for the project you
  
 ### How to use
 Replace the `--project` argument in the first line of `terraform/create.sh` with the ID of your project.
-`./create.sh`
+
+Run `./create.sh`
+
 Profit!
