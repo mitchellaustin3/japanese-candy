@@ -34,7 +34,7 @@ resource "google_compute_firewall" "production" {
 }
 
 resource "google_container_cluster" "primary" {
-  name               = "test-cluster"
+  name               = "japanese-candy"
   zone               = "us-west1-b"
   initial_node_count = 3
   network = "${google_compute_network.production.self_link}"

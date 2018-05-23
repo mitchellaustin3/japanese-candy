@@ -1,0 +1,28 @@
+#WIP
+#apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "0 0 1,15 * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo "Hello, World!"
+          restartPolicy: OnFailure
+
+
+
+###
+#Do something like this here: 
+#export API_URL=https://kubernetes.default.svc.cluster.local/apis/extensions/v1beta1/namespaces/default/deployments/japanese-candy-wordpress
+#export PAYLOAD='[{"op":"replace","path":"/spec/replicas","value":"20"}]'
+#curl -ik -X PATCH -d$PAYLOAD -H 'Content-Type: application/json-patch+json' $API_URL  -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)"
+###
